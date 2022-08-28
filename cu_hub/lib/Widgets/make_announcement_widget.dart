@@ -16,6 +16,7 @@ class _MakeAnnouncementStateWidget extends State<MakeAnnouncementWidget> {
 
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
     return Container(
       height: MediaQuery.of(context).size.height * 0.48,
       width: MediaQuery.of(context).size.width * 0.9,
@@ -46,7 +47,7 @@ class _MakeAnnouncementStateWidget extends State<MakeAnnouncementWidget> {
               height: 1,
               thickness: 0.8,
             ),
-            const SizedBox(height: 5),
+            SizedBox(height: screenSize.height * 0.007),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -66,7 +67,7 @@ class _MakeAnnouncementStateWidget extends State<MakeAnnouncementWidget> {
                 ),
               ],
             ),
-            const SizedBox(height: 6),
+            SizedBox(height: screenSize.height * 0.005),
             Row(
               children: const [
                 Text(
@@ -79,6 +80,7 @@ class _MakeAnnouncementStateWidget extends State<MakeAnnouncementWidget> {
                 Expanded(
                   child: TextField(
                     autofocus: true,
+                    style: TextStyle(color: Colors.white),
                     cursorColor: Colors.white,
                     decoration: InputDecoration(
                       border: InputBorder.none,
@@ -89,13 +91,18 @@ class _MakeAnnouncementStateWidget extends State<MakeAnnouncementWidget> {
                 ),
               ],
             ),
-            const TextField(
-              keyboardType: TextInputType.multiline,
-              maxLines: 10,
-              decoration: InputDecoration(
-                border: InputBorder.none,
-                hintText: 'Type...',
-                hintStyle: TextStyle(color: Colors.white60),
+            ConstrainedBox(
+              constraints: BoxConstraints(maxHeight: screenSize.height * 0.278),
+              child: const TextField(
+                keyboardType: TextInputType.multiline,
+                maxLines: 11, //(screenSize.height * 0.009).toInt(),
+                style: TextStyle(color: Colors.white),
+                cursorColor: Colors.white,
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintText: 'Type...',
+                  hintStyle: TextStyle(color: Colors.white60),
+                ),
               ),
             ),
             const Divider(

@@ -95,6 +95,7 @@ class _ProgrammesListScreenState extends State<ProgrammesListScreen> {
 
   Widget buildSelectButton(BuildContext context) {
     final label = 'Select ${selectedClasses.length} Programmes';
+    final screenSize = MediaQuery.of(context).size;
 
     return GestureDetector(
       onTap: () => setState(() {
@@ -102,17 +103,19 @@ class _ProgrammesListScreenState extends State<ProgrammesListScreen> {
       }),
       child: Container(
         // alignment: Alignment.bottomCenter,
-        margin: const EdgeInsets.only(bottom: 40),
-        padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 10),
+        margin: EdgeInsets.only(bottom: screenSize.height * 0.02),
+        padding: EdgeInsets.symmetric(
+            horizontal: screenSize.width * 0.13,
+            vertical: screenSize.height * 0.0115),
         decoration: BoxDecoration(
           color: selectedClasses.isNotEmpty ? Colors.amber : Colors.grey[600],
           borderRadius: const BorderRadius.all(Radius.circular(10)),
         ),
         child: Text(
           label,
-          style: const TextStyle(
+          style: TextStyle(
             color: Colors.black,
-            fontSize: 24,
+            fontSize: screenSize.width * 0.05,
             fontWeight: FontWeight.w700,
           ),
         ),

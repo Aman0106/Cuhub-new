@@ -15,6 +15,7 @@ class _SignInScreenState extends State<SignInScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -22,7 +23,7 @@ class _SignInScreenState extends State<SignInScreen> {
       ),
       backgroundColor: Color.fromARGB(255, 19, 20, 27),
       body: Container(
-        margin: EdgeInsets.only(top: 40),
+        margin: EdgeInsets.only(top: screenSize.height * 0.04),
         decoration: const BoxDecoration(
           color: Color.fromARGB(213, 45, 44, 51),
           borderRadius: BorderRadius.all(
@@ -32,21 +33,21 @@ class _SignInScreenState extends State<SignInScreen> {
         child: SingleChildScrollView(
           physics: BouncingScrollPhysics(),
           child: Container(
-            padding: const EdgeInsets.all(30.0),
+            padding: EdgeInsets.all(screenSize.aspectRatio * 60),
             margin: EdgeInsets.only(
-                top: MediaQuery.of(context).size.height * 0.035),
+                top: MediaQuery.of(context).size.height * 0.001),
             child: Column(
               children: [
-                const Text(
+                Text(
                   'Let\'s Sign you in',
                   style: TextStyle(
-                    color: Color.fromARGB(255, 240, 231, 231),
-                    fontSize: 56,
+                    color: const Color.fromARGB(255, 240, 231, 231),
+                    fontSize: screenSize.width * 0.15,
                     fontWeight: FontWeight.bold,
                     letterSpacing: 1,
                   ),
                 ),
-                const SizedBox(height: 50),
+                SizedBox(height: screenSize.height * 0.06),
                 TextField(
                   style: const TextStyle(color: Colors.white),
                   decoration: InputDecoration(
@@ -67,7 +68,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 20),
+                SizedBox(height: screenSize.height * 0.025),
                 TextField(
                   obscureText: !showPassword,
                   style: const TextStyle(color: Colors.white),
@@ -100,11 +101,12 @@ class _SignInScreenState extends State<SignInScreen> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 60),
+                SizedBox(height: screenSize.height * 0.09),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 100, vertical: 10),
+                    padding: EdgeInsets.symmetric(
+                        horizontal: screenSize.width * 0.265,
+                        vertical: screenSize.height * 0.0135),
                     primary: Colors.white,
                     shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(
@@ -119,11 +121,11 @@ class _SignInScreenState extends State<SignInScreen> {
                           : const FacultyHomeScreen();
                     }));
                   },
-                  child: const Text(
+                  child: Text(
                     'Sign In',
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: 24,
+                      fontSize: screenSize.aspectRatio * 55,
                       fontWeight: FontWeight.w700,
                     ),
                   ),

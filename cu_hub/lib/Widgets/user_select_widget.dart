@@ -14,92 +14,105 @@ class _UserSelectWidgetState extends State<UserSelectWidget> {
 
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
     return Container(
       width: double.infinity,
-      margin: const EdgeInsets.only(top: 80),
+      margin: EdgeInsets.only(top: screenSize.height * 0.1),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const Text(
+          Text(
             'CU Hub',
             style: TextStyle(
               color: Color.fromARGB(255, 240, 231, 231),
-              fontSize: 76,
+              fontSize: screenSize.width * 0.19,
               fontWeight: FontWeight.bold,
               letterSpacing: 1,
             ),
           ),
-          const SizedBox(height: 70),
+          SizedBox(height: screenSize.height * 0.07),
           Image.asset(
             'assets/images/cu_seal.png',
-            scale: 2,
+            scale: screenSize.aspectRatio * 3,
           ),
-          const SizedBox(height: 70),
-          Container(
-            margin: const EdgeInsets.symmetric(horizontal: 99),
-            decoration: const BoxDecoration(
-              color: Colors.black54,
-              borderRadius: BorderRadius.all(Radius.circular(15)),
-            ),
+          SizedBox(height: screenSize.height * 0.09),
+          Center(
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      selectionIndex = 0;
-                    });
-                  },
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: selectionIndex == 0
-                          ? Colors.white
-                          : Colors.transparent,
-                      borderRadius: const BorderRadius.all(Radius.circular(15)),
-                    ),
-                    padding: const EdgeInsets.all(8),
-                    child: Text(
-                      'Student',
-                      style: TextStyle(
-                        fontSize: 24,
-                        color:
-                            selectionIndex == 0 ? Colors.black : Colors.white,
-                        fontWeight: FontWeight.w600,
+                Container(
+                  margin:
+                      EdgeInsets.symmetric(horizontal: screenSize.width * 0.1),
+                  decoration: const BoxDecoration(
+                    color: Colors.black54,
+                    borderRadius: BorderRadius.all(Radius.circular(15)),
+                  ),
+                  child: Row(
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            selectionIndex = 0;
+                          });
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: selectionIndex == 0
+                                ? Colors.white
+                                : Colors.transparent,
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(15)),
+                          ),
+                          padding: const EdgeInsets.all(8),
+                          child: Text(
+                            'Student',
+                            style: TextStyle(
+                              fontSize: screenSize.aspectRatio * 50,
+                              color: selectionIndex == 0
+                                  ? Colors.black
+                                  : Colors.white,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
                       ),
-                    ),
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            selectionIndex = 1;
+                          });
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: selectionIndex == 1
+                                ? Colors.white
+                                : Colors.transparent,
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(15)),
+                          ),
+                          padding: const EdgeInsets.all(8),
+                          child: Text(
+                            'Faculty',
+                            style: TextStyle(
+                              fontSize: screenSize.aspectRatio * 50,
+                              color: selectionIndex == 1
+                                  ? Colors.black
+                                  : Colors.white,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
                   ),
                 ),
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      selectionIndex = 1;
-                    });
-                  },
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: selectionIndex == 1
-                          ? Colors.white
-                          : Colors.transparent,
-                      borderRadius: const BorderRadius.all(Radius.circular(15)),
-                    ),
-                    padding: const EdgeInsets.all(8),
-                    child: Text(
-                      'Faculty',
-                      style: TextStyle(
-                        fontSize: 24,
-                        color:
-                            selectionIndex == 1 ? Colors.black : Colors.white,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ),
-                )
               ],
             ),
           ),
-          const SizedBox(height: 40),
+          SizedBox(height: screenSize.height * 0.06),
           CircleAvatar(
             backgroundColor: Colors.white,
-            radius: 28,
+            radius: screenSize.aspectRatio * 55,
             child: IconButton(
               onPressed: () {
                 Navigator.push(
@@ -111,7 +124,7 @@ class _UserSelectWidgetState extends State<UserSelectWidget> {
               },
               icon: const Icon(Icons.arrow_forward_ios),
               color: Colors.black,
-              iconSize: 42,
+              iconSize: screenSize.aspectRatio * 70,
             ),
           ),
         ],
