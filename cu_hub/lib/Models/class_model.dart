@@ -1,6 +1,6 @@
 import 'package:cu_hub/Screens/programmes_screen.dart';
 
-class MyClass {
+class ClassModel {
   String label;
   final String? programme;
   int? year;
@@ -8,7 +8,7 @@ class MyClass {
   String? group;
   ProgrammType programmType;
 
-  MyClass({
+  ClassModel({
     required this.programmType,
     required this.label,
     this.programme,
@@ -18,67 +18,67 @@ class MyClass {
   });
 }
 
-final MyClass batch2022 =
-    MyClass(year: 2022, label: 'Batch-2022', programmType: ProgrammType.year);
-final MyClass batch2021 =
-    MyClass(year: 2021, label: 'Batch-2021', programmType: ProgrammType.year);
-final MyClass MCA = MyClass(
+final ClassModel batch2022 = ClassModel(
+    year: 2022, label: 'Batch-2022', programmType: ProgrammType.year);
+final ClassModel batch2021 = ClassModel(
+    year: 2021, label: 'Batch-2021', programmType: ProgrammType.year);
+final ClassModel MCA = ClassModel(
     programme: 'MCA',
     label: 'MCA',
     programmType: ProgrammType.programme,
     year: 2022);
-final MyClass MCACC = MyClass(
+final ClassModel MCACC = ClassModel(
     programme: 'MCA_CC',
     label: 'MCA CC and DevOps',
     programmType: ProgrammType.programme,
     year: 2022);
-final MyClass MCAAI = MyClass(
+final ClassModel MCAAI = ClassModel(
     programme: 'MCA_AI_ML',
     label: 'MCA AI ML',
     programmType: ProgrammType.programme,
     year: 2022);
-final MyClass BCA = MyClass(
+final ClassModel BCA = ClassModel(
     programme: 'BCA',
     label: 'BCA',
     programmType: ProgrammType.programme,
     year: 2022);
-final MyClass BSC = MyClass(
+final ClassModel BSC = ClassModel(
     programme: 'BSC',
     label: 'BSC',
     programmType: ProgrammType.programme,
     year: 2022);
-final MyClass BSC1 = MyClass(
+final ClassModel BSC1 = ClassModel(
     programme: 'BSC',
     label: 'BSC - 1',
     year: 2022,
     section: 1,
     programmType: ProgrammType.section);
-final MyClass BSC2 = MyClass(
+final ClassModel BSC2 = ClassModel(
     programme: 'BSC',
     label: 'BSC - 2',
     year: 2022,
     section: 2,
     programmType: ProgrammType.section);
-final MyClass BCA1 = MyClass(
+final ClassModel BCA1 = ClassModel(
     programme: 'BCA',
     label: 'BCA - 1',
     year: 2021,
     section: 1,
     programmType: ProgrammType.section);
-final MyClass MCA1 = MyClass(
+final ClassModel MCA1 = ClassModel(
     programme: 'MCA',
     label: 'MCA - 1',
     year: 2022,
     section: 1,
     programmType: ProgrammType.section);
-final MyClass MCACC1 = MyClass(
+final ClassModel MCACC1 = ClassModel(
     programme: 'MCA_CC',
     label: 'MCA CC and Devops - 1',
     year: 2022,
     section: 1,
     programmType: ProgrammType.section);
 
-final List<MyClass> allClasses = [
+final List<ClassModel> allClasses = [
   batch2022,
   batch2021,
   MCA,

@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       title: 'CU Hub',
-      home: AuthScreen(),
+      home: const AuthScreen(),
     );
   }
 }
