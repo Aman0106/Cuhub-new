@@ -1,6 +1,7 @@
 import 'package:cu_hub/Screens/auth_screens.dart';
 import 'package:cu_hub/Screens/sign_in_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class UserSelectWidget extends StatefulWidget {
   const UserSelectWidget({Key? key}) : super(key: key);
@@ -25,7 +26,7 @@ class _UserSelectWidgetState extends State<UserSelectWidget> {
             'CU Hub',
             style: TextStyle(
               color: Color.fromARGB(255, 240, 231, 231),
-              fontSize: screenSize.width * 0.19,
+              fontSize: 72,
               fontWeight: FontWeight.bold,
               letterSpacing: 1,
             ),
