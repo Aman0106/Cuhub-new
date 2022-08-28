@@ -7,8 +7,8 @@ import 'package:flutter/material.dart';
 import '../Models/class_model.dart';
 
 class ProgrammesListScreen extends StatefulWidget {
-  MyClass currentClass =
-      MyClass(label: 'default', programmType: ProgrammType.year);
+  ClassModel currentClass =
+      ClassModel(label: 'default', programmType: ProgrammType.year);
 
   bool isMultiselect = false;
 
@@ -19,10 +19,10 @@ class ProgrammesListScreen extends StatefulWidget {
 }
 
 class _ProgrammesListScreenState extends State<ProgrammesListScreen> {
-  final List<MyClass> allClass = allClasses;
-  List<MyClass> selectedClasses = [];
+  final List<ClassModel> allClass = allClasses;
+  List<ClassModel> selectedClasses = [];
   bool selectMult = false;
-  final List<MyClass> classes = [];
+  final List<ClassModel> classes = [];
 
   bool makeAnnouncement = false;
 
@@ -126,7 +126,7 @@ class _ProgrammesListScreenState extends State<ProgrammesListScreen> {
     });
   }
 
-  void selectClass(MyClass cls) {
+  void selectClass(ClassModel cls) {
     if (selectMult) {
       final isSelected = selectedClasses.contains(cls);
       setState(() {
@@ -144,7 +144,7 @@ class _ProgrammesListScreenState extends State<ProgrammesListScreen> {
     }
   }
 
-  void populateClasses(MyClass cls) {
+  void populateClasses(ClassModel cls) {
     switch (cls.programmType) {
       case ProgrammType.defaultType:
         allClass.forEach((element) {

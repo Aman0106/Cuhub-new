@@ -75,7 +75,7 @@ class _FacultyHomeScreenState extends State<FacultyHomeScreen> {
                         label: 'Programmes',
                         icon: Icons.people_alt,
                         page: ProgrammesListScreen(
-                          currentClass: MyClass(
+                          currentClass: ClassModel(
                             programmType: ProgrammType.defaultType,
                             label: 'default',
                           ),

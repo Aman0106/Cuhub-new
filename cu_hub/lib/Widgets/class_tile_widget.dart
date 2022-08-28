@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import '../Models/class_model.dart';
 
 class ClassTileWidget extends StatelessWidget {
-  final MyClass cls;
+  final ClassModel cls;
   bool isSelected;
   final bool isMulSelect;
-  final ValueChanged<MyClass> onSelectedClass;
+  final ValueChanged<ClassModel> onSelectedClass;
   final ValueChanged<bool> onMultiSelect;
 
   ClassTileWidget(
