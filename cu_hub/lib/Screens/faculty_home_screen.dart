@@ -5,6 +5,7 @@ import 'package:cu_hub/Widgets/functions_card_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FacultyHomeScreen extends StatefulWidget {
   const FacultyHomeScreen({Key? key}) : super(key: key);
@@ -27,41 +28,42 @@ class _FacultyHomeScreenState extends State<FacultyHomeScreen> {
             Container(
               // width: double.infinity,
               height: MediaQuery.of(context).size.height * 0.2,
-              child: const CircleAvatar(
+
+              child: CircleAvatar(
                 backgroundImage:
-                    AssetImage('assets/images/demo_profile_pic.jpg'),
-                radius: 90,
+                    const AssetImage('assets/images/demo_profile_pic.jpg'),
+                radius: 90.r,
               ),
             ),
-            const SizedBox(height: 20),
-            const Text(
+            SizedBox(height: 20.h),
+            Text(
               'Name',
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 20.sp,
               ),
             ),
-            const SizedBox(height: 10),
-            const Text(
+            SizedBox(height: 10.h),
+            Text(
               'E541789',
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 20.sp,
               ),
             ),
-            const SizedBox(height: 10),
+            SizedBox(height: 10.h),
             Expanded(
               child: Container(
-                padding: const EdgeInsets.only(top: 1, left: 20, right: 20),
-                decoration: const BoxDecoration(
-                  color: Color.fromARGB(255, 32, 34, 44),
+                padding: EdgeInsets.only(top: 1.h, left: 20.w, right: 20.w),
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 32, 34, 44),
                   borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(15),
-                    topRight: Radius.circular(15),
+                    topLeft: Radius.circular(15.r),
+                    topRight: Radius.circular(15.r),
                   ),
                 ),
                 child: GridView.count(
                   crossAxisCount: 2,
-                  crossAxisSpacing: 40,
-                  mainAxisSpacing: 20,
+                  crossAxisSpacing: 40.w,
+                  mainAxisSpacing: 20.h,
                   children: [
                     FeaturesCardWidget(
                         label: 'Time Table',

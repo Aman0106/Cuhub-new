@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FeaturesCardWidget extends StatelessWidget {
   final IconData icon;
@@ -15,27 +16,27 @@ class FeaturesCardWidget extends StatelessWidget {
         Navigator.push(context, MaterialPageRoute(builder: (builder) => page));
       },
       child: Container(
-        padding: const EdgeInsets.all(2),
+        padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 2.h),
         child: Card(
           color: const Color.fromARGB(255, 23, 25, 32),
           shadowColor: Colors.black,
           elevation: 5,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(20.r),
           ),
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 10.0),
+                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
                 child: Icon(
                   icon,
-                  size: 100,
+                  size: 100.sp,
                   color: Colors.white,
                 ),
               ),
               Text(
                 label,
-                style: const TextStyle(fontSize: 16),
+                style: TextStyle(fontSize: 16.sp),
               ),
             ],
           ),

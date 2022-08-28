@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MakeAnnouncementWidget extends StatefulWidget {
   final ValueChanged<bool> onShowAnnouncement;
@@ -16,114 +17,122 @@ class _MakeAnnouncementStateWidget extends State<MakeAnnouncementWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final screenSize = MediaQuery.of(context).size;
-    return Container(
-      height: MediaQuery.of(context).size.height * 0.48,
-      width: MediaQuery.of(context).size.width * 0.9,
-      decoration: const BoxDecoration(
-        color: Color.fromARGB(255, 56, 56, 70),
-        borderRadius: BorderRadius.all(Radius.circular(20)),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                GestureDetector(
-                  onTap: () => widget.onShowAnnouncement(false),
-                  child: const Icon(
-                    Icons.cancel,
-                    size: 30,
-                    color: Colors.white,
-                  ),
-                ),
-              ],
-            ),
-            const Divider(
-              color: Colors.white,
-              height: 1,
-              thickness: 0.8,
-            ),
-            SizedBox(height: screenSize.height * 0.007),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  name,
-                  style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Text(
-                  designation,
-                  style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: screenSize.height * 0.005),
-            Row(
-              children: const [
-                Text(
-                  'Subject: ',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Expanded(
-                  child: TextField(
-                    autofocus: true,
-                    style: TextStyle(color: Colors.white),
-                    cursorColor: Colors.white,
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: 'Type...',
-                      hintStyle: TextStyle(color: Colors.white60),
+    return SingleChildScrollView(
+      physics: BouncingScrollPhysics(),
+      child: Container(
+        margin: EdgeInsets.symmetric(horizontal: 20.w),
+        // height: 380.h,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: const Color.fromARGB(255, 56, 56, 70),
+          borderRadius: BorderRadius.all(Radius.circular(20.r)),
+        ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 10.r, vertical: 10.r),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  GestureDetector(
+                    onTap: () => widget.onShowAnnouncement(false),
+                    child: Icon(
+                      Icons.cancel,
+                      size: 30.sp,
+                      color: Colors.white,
                     ),
                   ),
-                ),
-              ],
-            ),
-            ConstrainedBox(
-              constraints: BoxConstraints(maxHeight: screenSize.height * 0.278),
-              child: const TextField(
-                keyboardType: TextInputType.multiline,
-                maxLines: 11, //(screenSize.height * 0.009).toInt(),
-                style: TextStyle(color: Colors.white),
-                cursorColor: Colors.white,
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hintText: 'Type...',
-                  hintStyle: TextStyle(color: Colors.white60),
-                ),
+                ],
               ),
-            ),
-            const Divider(
-              color: Colors.white,
-              height: 1,
-              thickness: 0.8,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                GestureDetector(
-                  onTap: () => widget.onShowAnnouncement(false),
-                  child: const Icon(
-                    Icons.send,
-                    size: 30,
-                    color: Colors.white,
+              Divider(
+                color: Colors.white,
+                height: 20.h,
+                thickness: 0.8,
+              ),
+              // SizedBox(height: 10.h),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    name,
+                    style: TextStyle(
+                      fontSize: 20.sp,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
+                    designation,
+                    style: TextStyle(
+                      fontSize: 20.sp,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 8.h),
+              Row(
+                children: [
+                  Text(
+                    'Subject: ',
+                    style: TextStyle(
+                      fontSize: 20.sp,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const Expanded(
+                    child: TextField(
+                      autofocus: true,
+                      style: TextStyle(color: Colors.white),
+                      cursorColor: Colors.white,
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: 'Type...',
+                        hintStyle: TextStyle(color: Colors.white60),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              ConstrainedBox(
+                constraints: BoxConstraints(maxHeight: 180.h),
+                child: const TextField(
+                  keyboardType: TextInputType.multiline,
+                  maxLines: 11, //(screenSize.height * 0.009).toInt(),
+                  style: TextStyle(color: Colors.white),
+                  cursorColor: Colors.white,
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hintText: 'Type...',
+                    hintStyle: TextStyle(color: Colors.white60),
                   ),
                 ),
-              ],
-            ),
-          ],
+              ),
+              Divider(
+                color: Colors.white,
+                height: 5.h,
+                thickness: 0.8,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  GestureDetector(
+                    onTap: () => widget.onShowAnnouncement(false),
+                    child: Padding(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 5.w, vertical: 5.h),
+                      child: Icon(
+                        Icons.send,
+                        size: 40.r,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

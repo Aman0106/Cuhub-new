@@ -1,7 +1,7 @@
 import 'package:cu_hub/Screens/auth_screens.dart';
 import 'package:cu_hub/Screens/sign_in_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class UserSelectWidget extends StatefulWidget {
   const UserSelectWidget({Key? key}) : super(key: key);
@@ -18,35 +18,37 @@ class _UserSelectWidgetState extends State<UserSelectWidget> {
     final screenSize = MediaQuery.of(context).size;
     return Container(
       width: double.infinity,
-      margin: EdgeInsets.only(top: screenSize.height * 0.1),
+      margin: EdgeInsets.only(top: 40.h),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
             'CU Hub',
             style: TextStyle(
-              color: Color.fromARGB(255, 240, 231, 231),
-              fontSize: 72,
+              color: const Color.fromARGB(255, 240, 231, 231),
+              fontSize: 72.sp,
               fontWeight: FontWeight.bold,
               letterSpacing: 1,
             ),
           ),
-          SizedBox(height: screenSize.height * 0.07),
-          Image.asset(
-            'assets/images/cu_seal.png',
-            scale: screenSize.aspectRatio * 3,
+          SizedBox(height: 40.h),
+          SizedBox(
+            height: 300.h,
+            width: 500.w,
+            child: Image.asset(
+              'assets/images/cu_seal.png',
+              scale: 1,
+            ),
           ),
-          SizedBox(height: screenSize.height * 0.09),
+          SizedBox(height: 40.h),
           Center(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  margin:
-                      EdgeInsets.symmetric(horizontal: screenSize.width * 0.1),
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     color: Colors.black54,
-                    borderRadius: BorderRadius.all(Radius.circular(15)),
+                    borderRadius: BorderRadius.all(Radius.circular(20.r)),
                   ),
                   child: Row(
                     children: [
@@ -62,13 +64,13 @@ class _UserSelectWidgetState extends State<UserSelectWidget> {
                                 ? Colors.white
                                 : Colors.transparent,
                             borderRadius:
-                                const BorderRadius.all(Radius.circular(15)),
+                                BorderRadius.all(Radius.circular(20.r)),
                           ),
-                          padding: const EdgeInsets.all(8),
+                          padding: EdgeInsets.all(8.sp),
                           child: Text(
                             'Student',
                             style: TextStyle(
-                              fontSize: screenSize.aspectRatio * 50,
+                              fontSize: 32.sp,
                               color: selectionIndex == 0
                                   ? Colors.black
                                   : Colors.white,
@@ -89,13 +91,13 @@ class _UserSelectWidgetState extends State<UserSelectWidget> {
                                 ? Colors.white
                                 : Colors.transparent,
                             borderRadius:
-                                const BorderRadius.all(Radius.circular(15)),
+                                BorderRadius.all(Radius.circular(20.r)),
                           ),
-                          padding: const EdgeInsets.all(8),
+                          padding: EdgeInsets.all(8.sp),
                           child: Text(
                             'Faculty',
                             style: TextStyle(
-                              fontSize: screenSize.aspectRatio * 50,
+                              fontSize: 32.sp,
                               color: selectionIndex == 1
                                   ? Colors.black
                                   : Colors.white,
@@ -110,10 +112,10 @@ class _UserSelectWidgetState extends State<UserSelectWidget> {
               ],
             ),
           ),
-          SizedBox(height: screenSize.height * 0.06),
+          SizedBox(height: 50.h),
           CircleAvatar(
-            backgroundColor: Colors.white,
-            radius: screenSize.aspectRatio * 55,
+            backgroundColor: Colors.amber,
+            radius: 32.r,
             child: IconButton(
               onPressed: () {
                 Navigator.push(
@@ -125,7 +127,7 @@ class _UserSelectWidgetState extends State<UserSelectWidget> {
               },
               icon: const Icon(Icons.arrow_forward_ios),
               color: Colors.black,
-              iconSize: screenSize.aspectRatio * 70,
+              iconSize: 40.r,
             ),
           ),
         ],

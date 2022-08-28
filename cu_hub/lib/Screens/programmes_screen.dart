@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:cu_hub/Widgets/class_tile_widget.dart';
 import 'package:cu_hub/Widgets/make_announcement_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../Models/class_model.dart';
 
@@ -76,7 +77,7 @@ class _ProgrammesListScreenState extends State<ProgrammesListScreen> {
           ),
           if (makeAnnouncement)
             BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+              filter: ImageFilter.blur(sigmaX: 7, sigmaY: 7),
               child: MakeAnnouncementWidget(
                 onShowAnnouncement: setAnnouncement,
               ),
@@ -115,7 +116,7 @@ class _ProgrammesListScreenState extends State<ProgrammesListScreen> {
           label,
           style: TextStyle(
             color: Colors.black,
-            fontSize: screenSize.width * 0.05,
+            fontSize: 26.sp,
             fontWeight: FontWeight.w700,
           ),
         ),

@@ -1,6 +1,7 @@
 import 'package:cu_hub/Screens/faculty_home_screen.dart';
 import 'package:cu_hub/Screens/student_home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SignInScreen extends StatefulWidget {
   final int userIndex;
@@ -15,7 +16,6 @@ class _SignInScreenState extends State<SignInScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final screenSize = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -23,31 +23,29 @@ class _SignInScreenState extends State<SignInScreen> {
       ),
       backgroundColor: Color.fromARGB(255, 19, 20, 27),
       body: Container(
-        margin: EdgeInsets.only(top: screenSize.height * 0.04),
-        decoration: const BoxDecoration(
-          color: Color.fromARGB(213, 45, 44, 51),
+        margin: EdgeInsets.only(top: 20.h, left: 20.w, right: 20.w),
+        decoration: BoxDecoration(
+          color: const Color.fromARGB(213, 45, 44, 51),
           borderRadius: BorderRadius.all(
-            Radius.circular(20),
+            Radius.circular(20.r),
           ),
         ),
         child: SingleChildScrollView(
           physics: BouncingScrollPhysics(),
           child: Container(
-            padding: EdgeInsets.all(screenSize.aspectRatio * 60),
-            margin: EdgeInsets.only(
-                top: MediaQuery.of(context).size.height * 0.001),
+            padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 30.h),
             child: Column(
               children: [
                 Text(
                   'Let\'s Sign you in',
                   style: TextStyle(
                     color: const Color.fromARGB(255, 240, 231, 231),
-                    fontSize: screenSize.width * 0.15,
+                    fontSize: 54.sp,
                     fontWeight: FontWeight.bold,
                     letterSpacing: 1,
                   ),
                 ),
-                SizedBox(height: screenSize.height * 0.06),
+                SizedBox(height: 40.h),
                 TextField(
                   style: const TextStyle(color: Colors.white),
                   decoration: InputDecoration(
@@ -59,16 +57,16 @@ class _SignInScreenState extends State<SignInScreen> {
                     focusedBorder: OutlineInputBorder(
                       borderSide:
                           const BorderSide(color: Colors.white, width: 2.5),
-                      borderRadius: BorderRadius.circular(15),
+                      borderRadius: BorderRadius.circular(15.r),
                     ),
                     enabledBorder: OutlineInputBorder(
                       borderSide:
                           const BorderSide(color: Colors.white, width: 1.2),
-                      borderRadius: BorderRadius.circular(15),
+                      borderRadius: BorderRadius.circular(15.r),
                     ),
                   ),
                 ),
-                SizedBox(height: screenSize.height * 0.025),
+                SizedBox(height: 20.h),
                 TextField(
                   obscureText: !showPassword,
                   style: const TextStyle(color: Colors.white),
@@ -81,12 +79,12 @@ class _SignInScreenState extends State<SignInScreen> {
                     focusedBorder: OutlineInputBorder(
                       borderSide:
                           const BorderSide(color: Colors.white, width: 2),
-                      borderRadius: BorderRadius.circular(15),
+                      borderRadius: BorderRadius.circular(15.r),
                     ),
                     enabledBorder: OutlineInputBorder(
                       borderSide:
                           const BorderSide(color: Colors.white, width: 1.2),
-                      borderRadius: BorderRadius.circular(15),
+                      borderRadius: BorderRadius.circular(15.r),
                     ),
                     suffixIcon: GestureDetector(
                       onTap: (() {
@@ -101,16 +99,15 @@ class _SignInScreenState extends State<SignInScreen> {
                     ),
                   ),
                 ),
-                SizedBox(height: screenSize.height * 0.09),
+                SizedBox(height: 65.h),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: screenSize.width * 0.265,
-                        vertical: screenSize.height * 0.0135),
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 100.w, vertical: 10.h),
                     primary: Colors.white,
-                    shape: const RoundedRectangleBorder(
+                    shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(
-                        Radius.circular(10),
+                        Radius.circular(10.r),
                       ),
                     ),
                   ),
@@ -125,7 +122,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     'Sign In',
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: screenSize.aspectRatio * 55,
+                      fontSize: 25.sp,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
