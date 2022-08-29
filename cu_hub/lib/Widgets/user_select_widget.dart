@@ -114,7 +114,7 @@ class _UserSelectWidgetState extends State<UserSelectWidget> {
           ),
           SizedBox(height: 50.h),
           CircleAvatar(
-            backgroundColor: Colors.amber,
+            backgroundColor: Colors.white,
             radius: 32.r,
             child: IconButton(
               onPressed: () {
