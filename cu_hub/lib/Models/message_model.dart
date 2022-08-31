@@ -14,8 +14,21 @@ class MessageModel {
 
 MessageModel sampleMessage1 = MessageModel(
   senderName: 'senderName',
-  senderDesignation: 'senderDesignation',
+  senderDesignation: 'SenderDesignation',
   subject: 'Hackathon 2022',
   message:
       'All the students are informed the HackCU Hackathon will be held in Block D5 at venue 2. Every particpant is required to bring their devices with them.',
+);
+MessageModel sampleMessage2 = MessageModel(
+  senderName: 'senderName',
+  senderDesignation: 'SenderDesignation',
+  subject: 'Hackathon 2022',
+  message:
+      'All the students are informed the HackCU Hackathon will be held in Block D5 at venue 2. Every particpant is required to bring their devices with them.All the students are informed the HackCU Hackathon will be held in Block D5 at venue 2. Every particpant is required to bring their devices with them.All the students are informed the HackCU Hackathon will be held in Block D5 at venue 2. Every particpant is required to bring their devices with them.All the students are informed the HackCU Hackathon will be held in Block D5 at venue 2. Every particpant is required to bring their devices with them.',
+);
+MessageModel sampleMessage3 = MessageModel(
+  senderName: 'senderName',
+  senderDesignation: 'SenderDesignation',
+  subject: 'Hackathon 2022',
+  message: 'All the students are informed.',
 );
